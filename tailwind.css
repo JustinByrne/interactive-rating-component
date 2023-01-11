@@ -517,6 +517,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.flex{
+  display: flex;
+}
+
+.hidden{
+  display: none;
+}
+
 .h-screen{
   height: 100vh;
 }
@@ -529,9 +537,25 @@ video {
   width: 100vw;
 }
 
+.max-w-sm{
+  max-width: 24rem;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
 .bg-very-dark-blue{
   --tw-bg-opacity: 1;
   background-color: hsl(216 12% 8% / var(--tw-bg-opacity));
+}
+
+.p-4{
+  padding: 1rem;
 }
 
 .font-overpass{
