@@ -14,6 +14,9 @@ module.exports = {
       },
       fontFamily: {
         'overpass': ['Overpass', 'sans-serif']
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     },
   },
