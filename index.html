@@ -10,51 +10,91 @@
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 
-<body class="flex items-center justify-center w-screen h-screen font-overpass">
-    <main class="max-w-sm p-4">
+<body class="flex items-center justify-center w-screen h-screen px-8 font-overpass bg-very-dark-blue">
+    <main class="relative max-w-md p-8 overflow-hidden rounded-3xl bg-dark-blue">
+
+        <div
+            class="absolute left-0 z-0 w-full h-full rounded-full -top-32 bg-gradient-radial from-medium-grey/20 blur-2xl to-transparent">
+        </div>
+
         <!-- Rating state start -->
-        <div>
-            <div>
-                <img src="./images/icon-star.svg">
+        <div class="z-10">
+            <div class="pb-8">
+                <img src="./images/icon-star.svg" class="p-4 rounded-full bg-medium-grey/10">
             </div>
 
             <div>
-                <h1> How did we do? </h1>
+                <h1 class="pb-5 text-2xl font-bold text-white"> How did we do? </h1>
 
-                <p>
+                <p class="text-light-grey text-[15px] pb-6">
                     Please let us know how we did with your support request. All feedback is appreciated
                     to help us improve our offering!
                 </p>
             </div>
 
-            <div>
-                <button> 1 </button>
-                <button> 2 </button>
-                <button> 3 </button>
-                <button> 4 </button>
-                <button> 5 </button>
+            <div class="grid grid-cols-5 gap-6 mb-6">
+                <div>
+                    <button
+                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                        1
+                    </button>
+                </div>
+
+                <div>
+                    <button
+                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                        2
+                    </button>
+                </div>
+
+                <div>
+                    <button
+                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                        3
+                    </button>
+                </div>
+
+                <div>
+                    <button
+                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                        4
+                    </button>
+                </div>
+
+                <div>
+                    <button
+                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                        5
+                    </button>
+                </div>
+
             </div>
 
             <div>
-                <button> Submit </button>
+                <button
+                    class="w-full py-2.5 text-center text-white rounded-full bg-orange uppercase tracking-wider font-bold hover:text-orange hover:bg-white">
+                    Submit
+                </button>
             </div>
         </div>
         <!-- Rating state end -->
 
         <!-- Thank you state start -->
         <div class="hidden">
-            <div>
+            <div class="flex justify-center py-8">
                 <img src="./images/illustration-thank-you.svg">
             </div>
 
-            <div>
-                You selected <!-- Add rating here --> out of 5
+            <div class="flex justify-center pb-8">
+                <span class="px-4 py-1.5 rounded-full bg-medium-grey/10 text-orange">
+                    You selected <!-- Add rating here -->4 out of 5
+                </span>
             </div>
 
             <div>
-                <h1> Thank you! </h1>
+                <h1 class="pb-4 text-2xl font-bold text-center text-white"> Thank you! </h1>
 
-                <p>
+                <p class="text-light-grey text-[15px] text-center md:px-6">
                     We appreciate you taking the time to give a rating. If you ever need more support,
                     don't hesitate to get in touch!
                 </p>
