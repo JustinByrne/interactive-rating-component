@@ -11,14 +11,15 @@
 </head>
 
 <body class="flex items-center justify-center w-screen h-screen px-8 font-overpass bg-very-dark-blue">
-    <main class="relative max-w-md p-8 overflow-hidden rounded-3xl bg-dark-blue/50">
+    <main x-data="{selection: '', submit: false}" x-on:click.away="selection = submit ? selection : ''"
+        class="relative max-w-md p-8 overflow-hidden rounded-3xl bg-dark-blue/50">
 
         <div
             class="absolute left-0 z-0 w-full h-full rounded-full -top-48 bg-gradient-radial from-medium-grey/20 blur-2xl to-transparent">
         </div>
 
         <!-- Rating state start -->
-        <div class="z-10">
+        <div class="z-10" x-bind:class="submit && selection != '' ? 'hidden' : ''">
             <div class="pb-8">
                 <img src="./images/icon-star.svg" class="p-4 rounded-full bg-medium-grey/10">
             </div>
@@ -34,36 +35,41 @@
 
             <div class="grid grid-cols-5 gap-6 mb-6">
                 <div>
-                    <button
-                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                    <button class="rounded-full h-10 md:h-14 aspect-[1/1] hover:bg-orange hover:text-white"
+                        x-on:click="selection = 1"
+                        x-bind:class="selection == 1 ? 'bg-light-grey text-white' : 'bg-medium-grey/10 text-light-grey'">
                         1
                     </button>
                 </div>
 
                 <div>
-                    <button
-                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                    <button class="rounded-full h-10 md:h-14 aspect-[1/1] hover:bg-orange hover:text-white"
+                        x-on:click="selection = 2"
+                        x-bind:class="selection == 2 ? 'bg-light-grey text-white' : 'bg-medium-grey/10 text-light-grey'">
                         2
                     </button>
                 </div>
 
                 <div>
-                    <button
-                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                    <button class="rounded-full h-10 md:h-14 aspect-[1/1] hover:bg-orange hover:text-white"
+                        x-on:click="selection = 3"
+                        x-bind:class="selection == 3 ? 'bg-light-grey text-white' : 'bg-medium-grey/10 text-light-grey'">
                         3
                     </button>
                 </div>
 
                 <div>
-                    <button
-                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                    <button class="rounded-full h-10 md:h-14 aspect-[1/1] hover:bg-orange hover:text-white"
+                        x-on:click="selection = 4"
+                        x-bind:class="selection == 4 ? 'bg-light-grey text-white' : 'bg-medium-grey/10 text-light-grey'">
                         4
                     </button>
                 </div>
 
                 <div>
-                    <button
-                        class="rounded-full h-14 text-light-grey bg-medium-grey/10 aspect-[1/1] hover:bg-orange hover:text-white">
+                    <button class="rounded-full h-10 md:h-14 aspect-[1/1] hover:bg-orange hover:text-white"
+                        x-on:click="selection = 5"
+                        x-bind:class="selection == 5 ? 'bg-light-grey text-white' : 'bg-medium-grey/10 text-light-grey'">
                         5
                     </button>
                 </div>
@@ -72,7 +78,8 @@
 
             <div>
                 <button
-                    class="w-full py-2.5 text-center text-white rounded-full bg-orange uppercase tracking-wider font-bold hover:text-orange hover:bg-white">
+                    class="w-full py-2.5 text-center text-white rounded-full bg-orange uppercase tracking-wider font-bold hover:text-orange hover:bg-white"
+                    x-on:click="submit = selection != '' ? true : false">
                     Submit
                 </button>
             </div>
@@ -80,14 +87,14 @@
         <!-- Rating state end -->
 
         <!-- Thank you state start -->
-        <div class="hidden">
+        <div class="z-10" x-bind:class="submit && selection != '' ? '' : 'hidden'" x-cloak>
             <div class="flex justify-center py-8">
                 <img src="./images/illustration-thank-you.svg">
             </div>
 
             <div class="flex justify-center pb-8">
                 <span class="px-4 py-1.5 rounded-full bg-medium-grey/10 text-orange">
-                    You selected <!-- Add rating here -->4 out of 5
+                    You selected <span x-text="selection"></span> out of 5
                 </span>
             </div>
 
